@@ -1,3 +1,3 @@
 export const hello = (req, res) => {
-    res.send("Hello Metrikard Server");
+    res.send("Hello from Server");
 };
