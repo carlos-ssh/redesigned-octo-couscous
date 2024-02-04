@@ -1,10 +1,9 @@
 import { Router } from 'express';
 import { xmlReader } from "../controllers/xmlReader.controller.js";
+import { validateXMLFile, validateXMLContent } from '../middlewares/validateXML.middleware.js';
 
 const router = Router();
 
-// router.use(corsMiddleware);
-router.post("/", xmlReader);
-// router.post("/register", validateSchema(registerSchema), register);
+router.post('/xml-reader', validateXMLFile, validateXMLContent, xmlReader);
 
 export default router;
